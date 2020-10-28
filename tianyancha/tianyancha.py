@@ -260,7 +260,7 @@ def get_html(gongsi_name):
             else:#直接查询
                 #查询专利列表
                 data = scrapy(driver,['patent'])
-                
+                print(data)
         return '%s爬取成功' % gongsi_name
 
 
