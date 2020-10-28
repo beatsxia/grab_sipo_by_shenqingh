@@ -1,0 +1,52 @@
+#客户专利信息
+create table kwy_corp_patent(
+ id int(11) not null auto_increment primary key,
+ corp_guid varchar(50) not null default '' comment'客户唯一id',
+ idx int(4) not null default 0 comment'拉取序号',
+ app_pub_date date not null default '0000-00-00' comment'申请公布日',
+ app_pub_no varchar(50) not null default '' comment'申请公布号',
+ patent_no varchar(50) not null default '' comment'专利号或申请号',
+ patent_name varchar(255) not null default '' comment'专利名称',
+ patent_type varchar(50) not null default '' comment'专利类型',
+ detail_url varchar(255) not null default '' comment'专利详情获取地址',
+ application_date date not null default '0000-00-00' comment'申请日',
+ ipc varchar(100) not null default '' comment'主分类号',
+ applicant  varchar(255) not null default '' comment'专利权人',
+ address varchar(255)  not null default '' comment'地址',
+ inventor varchar(255) not null default '' comment'发明人或设计人',
+ description text null comment'摘要',
+ agency varchar(255) not null default '' comment'代理机构',
+ agency_person varchar(50) not null default '' comment'代理人',
+ status varchar(255) not null default '' comment'专利状态',
+ created_time datetime not null default '0000-00-00 00:00:00'
+)engine=myisam;
+
+
+create table kwy_corp_drafts(
+ id int(11) not null auto_increment primary key,
+ guid varchar(50) not null default '' comment'唯一id',
+ name varchar(255) not null default '' comment'客户名称',
+ corp_avater varchar(255) not null default '' comment'客户icon图片',
+ corptype tinyint(4) not null default 1 comment'客户类型：1：企业，2：个人，3：事业单位、组织机构，4：个体工商户',
+ credit_code varchar(50) not null default '' comment'统一社会信用代码',
+ birthday date not null default '0000-00-00' comment'注册日期',
+ summary text null comment'简介',
+ legal_person varchar(20) not null default '' comment'法人',
+ phone varchar(100) not null default '' comment'电话',
+ email varchar(100) not null default '' comment'邮箱',
+ website varchar(100) not null default '' comment'网址',
+ address varchar(255) not null default '' comment'办公地址',
+ reg_address varchar(255) not null default '' comment'注册地址',
+ status varchar(50) not null default '' comment'状态',
+ industry varchar(255) not null default '' comment'行业',
+ staff_size varchar(255) not null default '' comment'人员规模',
+ business text null comment'营业范围',
+ is_new_tech  tinyint(4) not null default 0 comment'是否高新技术企业，1：是',
+ trademark_number int(4) not null default 0 comment'商标数量',
+ patent_number int(4) not null default 0 comment'专利数量',
+ copyright_number int(4) not null default 0 comment'版权数量',
+ is_pull tinyint(4) not null default 0 comment'状态，1：已爬取，0：待爬取',
+ pull_time datetime not null default '0000-00-00 00:00:00' comment'爬取时间',
+ created_id int(11) not null default 0 comment'创建者id',
+ created_time datetime not null default '0000-00-00 00:00:00'
+)engine=myisam;
