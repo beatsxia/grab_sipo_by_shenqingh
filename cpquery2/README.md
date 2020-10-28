@@ -1,7 +1,5 @@
 # grab_sipo_by_shenqingh
-抓取中国专利信息http://cpquery.sipo.gov.cn，通过专利号查询，做了简单的验证码识别
-验证码识别和grab_qiye.py是在网上找的，具体是哪里忘了。你也可以优化一下验证码算法，是用的np数据矩阵检索的方法。创建PKL文件，对每个位置的字符进行保存，从而进行检索匹配。
+libsvm包要先去https://www.lfd.uci.edu/~gohlke/pythonlibs/#libsvm下载对应版本的
+比如3.8版本就可以下libsvm‑3.24‑cp38‑cp38‑win_amd64.whl
+然后在本地安装whl文件
 
-可能需要配置selenium和 火狐浏览器 geckodriver.exe，这个自己百度一下
-安装好以后直接运行grab.py就可以
-然后在弹出的浏览器里面输入账号密码，进去之后就会自动输入专利号进行查询了
